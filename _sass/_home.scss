@@ -226,16 +226,16 @@ div.mobileMenu.hide {
 }
 @include media_query(75em) {
     .banner {
-        margin: 5em 0;
+        margin: 10em 0 4em;
 
         @at-root .siteTitle {
             font-size: 6em;
         }
         @at-root .subtitle {
-            font-size: 2em;
+            font-size: 1.5em;
         }
         @at-root .invite {
-            font-size: 2em;
+            font-size: 1.5em;
         }
     }
 }
