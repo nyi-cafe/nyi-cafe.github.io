@@ -1,0 +1,62 @@
+$vendor_prefixes: (
+        "webkit": -webkit-,
+        "moz": -moz-,
+        "ms": -ms-,
+        "o": -o-,
+        "spec": null
+    );
+
+$css_module_prefixes: (
+        "background-cover": (webkit, o, spec),
+        "border-radius": (webkit, moz, spec),
+        "box-shadow": (webkit, moz, spec),
+        "box-sizing": (webkit, moz, spec),
+        "flexbox": (webkit, spec)
+    );
+$flexbox_properties: (
+        "align-content": align-content,
+        "align-items": align-items,
+        "align-self": align-self,
+        "flex": flex,
+        "flex-basis": flex-basis,
+        "flex-direction": flex-direction,
+        "flex-flow": flex-flow,
+        "flex-grow": flex-grow,
+        "flex-shrink": flex-shrink,
+        "flex-wrap": flex-wrap,
+        "justify-content": justify-content,
+        "order": order,
+    );
+
+@function get_prefixes($key) {
+    @if map-has-key($css_module_prefixes, $key) {
+        @return map-get($css_module_prefixes, $key);
+    }
+    @if map-has-key($flexbox_properties, $key) {
+        @return map-get($css_module_prefixes, flexbox);
+    }
+    @return map-keys($vendor_prefixes);
+}
+
+@function get_prefix_value($prefix) {
+    @return map-get($vendor_prefixes, $prefix);
+}
+
+// Returns a raw prefixed value.
+@function prefix_it($value, $prefix) {
+    @return #{$prefix}#{$value};
+}
+
+// Returns a prefixed css declaration.
+@mixin prefix_prop($property, $value, $prefix) {
+    #{prefix_it($property, $prefix)}: unquote($value);
+}
+
+@mixin prefix($declaration) {
+    @each $property, $value in $declaration {
+        $prefixes: get_prefixes($property);
+        @each $prefix in $prefixes {
+            @include prefix_prop($property, $value, get_prefix_value($prefix));
+        }
+    }
+}

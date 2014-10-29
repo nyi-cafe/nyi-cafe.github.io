@@ -1,0 +1,12 @@
+# Site settings
+title: "NYI December Camp 2014"
+description: "NYI December Camp 2014"
+author: "Kinah Watts"
+url: "http://nyi-cafe.github.io"
+
+# Build settings
+markdown: kramdown
+
+# SASS settings
+sass:
+    style: :compressed

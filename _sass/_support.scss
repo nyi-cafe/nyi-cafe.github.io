@@ -1,0 +1,113 @@
+#support {
+    background: #628A58 url('../images/overlay.png');
+    padding: 4em 0;
+
+    .title {
+        color: #f9f9f9;
+        margin-bottom: 1em;
+    }
+}
+@include media_query(75em) {
+    #support {
+        padding: 5em 0;
+    }
+}
+
+.supports {
+    @extend %grid;
+    width: 90%;
+    margin: 0 auto;
+
+    @at-root .supportsItem {
+        @extend %grid_item;
+        @include width(1, 2em);
+    }
+}
+@include media_query(48em) {
+    .supportsItem {
+        @include width(1/2, 1em);
+    }
+}
+@include media_query(75em) {
+    .supportsItem {
+        @include width(1/4, .5em);
+    }
+}
+
+.prayer, .share, .cash, .inkind {
+    background-color: rgba(#fff, .2);
+    border-radius: 2px;
+    @include prefix((
+        box-shadow: 0px 3px 0px 0px rgba(#646464, .1),
+        transition: all 1s ease
+    ));
+
+    &:hover, &:focus {
+        @include prefix((
+            transform: translate(0, -15px)
+        ));
+    }
+}
+
+.prayerIcon, .shareIcon, .cashIcon, .inkindIcon {
+    display: block;
+    font-size: 5em;
+    text-align: center;
+    color: #F69679;
+    padding: .5em .4em;
+}
+@include media_query(75em) {
+    .prayerIcon, .shareIcon, .cashIcon, .inkindIcon {
+        font-size: 4em;
+        padding: .75em;
+    }
+}
+.shareIcon {
+    color: #E8B968;
+}
+.cashIcon {
+    color: #7ACCC8;
+}
+.inkindIcon {
+    color: lighten(#D4B004, 20%);
+}
+.prayerText, .shareText, .cashText, .inkindText {
+    display: block;
+    background-color: rgba(#70936B, .4);
+    font-size: 1.5em;
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    color: #f9f9f9;
+    padding: .5em;
+    border-radius: 0 0 2px 2px;
+}
+@include media_query(48em) {
+    .prayerText, .shareText, .cashText, .inkindText {
+        font-size: 2em;
+        padding: .5em;
+    }
+}
+@include media_query(75em) {
+    .prayerText, .shareText, .cashText, .inkindText {
+        font-size: 1.2em;
+    }
+}
+
+.supportMessage {
+    font-size: 1.25em;
+    font-weight: 100;
+    text-align: center;
+    color: #f9f9f9;
+    margin: 3em 0 1em
+}
+@include media_query(48em) {
+    .supportMessage {
+        font-size: 1.5em;
+    }
+}
+@include media_query(75em) {
+    .supportMessage {
+        font-size: 1em;
+    }
+}

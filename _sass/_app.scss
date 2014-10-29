@@ -1,0 +1,58 @@
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1em;
+    overflow: hidden;
+}
+@include media_query(48em) {
+    .wrapper {
+        width: 90%;
+    }
+}
+@include media_query(75em) {
+    .wrapper {
+        width: 80%;
+    }
+}
+
+.title {
+    font-size: 2.25em;
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 .5em;
+}
+@include media_query(48em) {
+    .title {
+        font-size: 2.85em;
+    }
+}
+@include media_query(75em) {
+    .title {
+        font-size: 3em;
+    }
+}
+
+.sm, .md, .lg {
+    display: none;
+    height: 0;
+    width: 0;
+}
+.sm {
+    display: block;
+}
+@media screen and (min-width: 48em) {
+    .md { display: block; }
+    .sm { display: none; }
+}
+@media screen and (min-width: 75em) {
+    .lg { display: block; }
+    .md { display: none; }
+}
+
+@import
+    "home",
+    "camp_details",
+    "support",
+    "footer"
+;

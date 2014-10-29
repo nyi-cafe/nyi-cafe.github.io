@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+<body>
+
+    {{ content }}
+
+    <span class="sm"></span><span class="md"></span><span class="lg"></span>
+
+    <script src="{{ "/assets/js/smooth-scroll.min.js" | preped: site.url }}"></script>
+    <script src="{{ "/assets/js/app.min.js" | preped: site.url }}"></script>
+</body>
+</html>

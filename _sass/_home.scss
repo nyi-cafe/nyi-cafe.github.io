@@ -1,0 +1,241 @@
+#home {
+    background: url('../images/trees-blur.jpg') no-repeat;
+    @include prefix((
+        background-size: cover
+    ));
+    background-attachment: fixed;
+    padding: 5em 0;
+}
+
+.menuBar {
+    background: rgba(#333, .9) url('../images/overlay.png');
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    @include prefix((
+        box-shadow: 0px 1px 3px 0px rgba(#222, .6),
+        transition: all .5s ease
+    ));
+}
+.menuWrap {
+    @extend %grid;
+    width: 90%;
+    margin: auto;
+    padding: 0 1em;
+
+    @at-root .logoWrap, .navWrap {
+        @extend %grid_item;
+        @include width(1, .5em 0);
+        position: relative;
+        vertical-align: middle;
+    }
+}
+@include media_query(48em) {
+    .menuWrap {
+        width: 90%;
+    }
+}
+@include media_query(75em) {
+    .menuWrap {
+        width: 80%;
+
+        @at-root .logoWrap {
+            @include width(1/5, 1em 0);
+        }
+        @at-root .navWrap {
+            @include width(4/5, 1em 0);
+        }
+    }
+}
+.logo {
+    width: 64px;
+
+    img {
+        @include prefix((
+            transition: all 0.5s ease
+        ));
+    }
+
+    a {
+        display: block;
+
+        &:hover img {
+            opacity: .8;
+        }
+    }
+}
+@include media_query(48em) {
+    .logo {
+        width: 100px;
+    }
+}
+@include media_query(75em) {
+    .logo {
+        width: 128px;
+    }
+}
+
+nav.navWrap {
+    text-align: center;
+    @include prefix((
+        transition: all 0.5s ease
+    ));
+
+    ul {
+        letter-spacing: -.3125em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: block;
+        letter-spacing: normal;
+    }
+
+    a {
+        display: block;
+        font-size: 1.1em;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: #fff;
+        padding: .5em;
+        @include prefix((
+            text-shadow: 0px 1px 1px rgba(#000, .6),
+        ));
+    }
+}
+nav.navWrap.hide {
+    display: none;
+}
+@include media_query(48em) {
+    nav.navWrap {
+
+        a {
+            font-size: 1.45em;
+            font-weight: 100;
+        }
+    }
+}
+@include media_query(75em) {
+    nav.navWrap {
+        text-align: right;
+
+        li {
+            display: inline-block;
+
+            &:not(:first-child) {
+                border-left: 1px solid #84907a;
+            }
+        }
+
+        a {
+            font-size: 1.1em;
+            padding: 0 .5em;
+
+            &:hover, &:focus {
+                background-color: rgba(#5F8555, .4);
+            }
+        }
+    }
+}
+
+div.mobileMenu {
+    font-size: .8em;
+    font-weight: bold;
+    letter-spacing: normal;
+    color: #f9f9f9;
+    border: 1px solid rgba(#fff, .2);
+    border-radius: 2px;
+    padding: .5em;
+    cursor: pointer;
+    position: absolute;
+    top: .9em;
+    right: .1em;
+    z-index: 2;
+    @include prefix((
+        transition: all 0.5s ease
+    ));
+
+    &:hover, &:focus {
+        background-color: rgba(#333, .6);
+        color: rgba(#f9f9f9, .8);
+    }
+}
+@include media_query(48em) {
+    div.mobileMenu {
+        font-size: 1em;
+    }
+}
+div.mobileMenu.hide {
+    display: none;
+}
+
+.banner {
+    position: relative;
+    margin: 3.5em 0 1.5em;
+
+    @at-root .siteTitle {
+        font-family: "Raleway", sans-serif;
+        font-size: 3.25em;
+        font-weight: 100;
+        line-height: 1;
+        text-align: center;
+        color: #fff;
+        margin: 0 0 .25em;
+    }
+    @at-root .subtitle {
+        font-family: "Raleway", sans-serif;
+        font-size: 1em;
+        font-weight: 100;
+        line-height: 1;
+        letter-spacing: 5px;
+        margin: 0 0 .1em;
+    }
+    @at-root .invite {
+        font-family: "Raleway", sans-serif;
+        font-size: 1em;
+        font-weight: 100;
+        font-style: italic;
+        margin: 4em 0 0;
+        padding: 0 2em;
+    }
+
+    p {
+        color: #fff;
+        text-align: center;
+    }
+}
+@include media_query(48em) {
+    .banner {
+        margin: 4em;
+
+        @at-root .siteTitle {
+            font-size: 5em;
+        }
+        @at-root .subtitle {
+            font-size: 1.75em;
+        }
+        @at-root .invite {
+            font-size: 1.75em;
+        }
+    }
+}
+@include media_query(75em) {
+    .banner {
+        margin: 5em 0;
+
+        @at-root .siteTitle {
+            font-size: 6em;
+        }
+        @at-root .subtitle {
+            font-size: 2em;
+        }
+        @at-root .invite {
+            font-size: 2em;
+        }
+    }
+}

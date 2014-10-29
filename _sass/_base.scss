@@ -1,0 +1,31 @@
+body {
+    font: #{$font-size}/#{$line-height} #{$font-family};
+    font-weight: 100;
+    color: #454545;
+    margin: 0;
+    position: relative;
+}
+a {
+    background: transparent;
+    text-decoration: none;
+    @include prefix((
+        transition: all 0.5s ease
+    ));
+
+    &:hover, &:focus {
+        outline: 0;
+    }
+}
+p {
+    margin: 1em 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+* {
+    @include prefix((
+        box-sizing: border-box
+    ));
+}
