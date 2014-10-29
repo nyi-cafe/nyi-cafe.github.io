@@ -100,3 +100,60 @@
         font-size: .3em;
     }
 }
+
+.registration {
+    margin-top: 1em;
+
+    .title {
+        font-size: 2em;
+    }
+}
+.amountWrap {
+    @extend %grid;
+
+    @at-root .amount {
+        @extend %grid_item;
+        @include width(1/2, 1em);
+    }
+}
+@include media_query(75em) {
+    .amount {
+        @include width(1/4, 1em);
+    }
+}
+.fee {
+    font-size: 2em;
+    text-align: center;
+    color: #FB7064;
+    margin: 0;
+
+    span {
+        font-size: .5em;
+        color: #454545;
+    }
+}
+.until {
+    font-size: .8em;
+    text-align: center;
+    margin: 0;
+}
+@include media_query(48em) {
+    .registration {
+        margin-top: 2.5em;
+
+        .title {
+            font-size: 2.75em;
+        }
+    }
+    .fee {
+        font-size: 3.75em;
+
+        span {
+            font-size: .5em;
+            color: #454545;
+        }
+    }
+    .until {
+        font-size: 1.2em;
+    }
+}

@@ -188,7 +188,7 @@
         nav = $( 'nav.navWrap' ),
         menu = $( '.mobileMenu' ),
         sizes = $( 'span.sm, span.md, span.lg' ),
-        items = $( '.details, .supportsItem' ),
+        items = $( '.details, .amountWrap, .supportsItem' ),
 
         itemsLen = items.length,
         isAnimated = [], marks = [], bool = true,
@@ -287,22 +287,26 @@
             isAnimated.push('true');
         }
         if ( scrollTop >= marks[3] && !isAnimated[3] ) {
-            $( '#prayer' ).removeClass( 'prepare' ).addClass( 'animated fadeInUp' );
+            $( '#amountWrap' ).removeClass( 'prepare' ).addClass( 'animated fadeInUp' );
             isAnimated.push('true');
         }
         if ( scrollTop >= marks[4] && !isAnimated[4] ) {
-            $( '#inkind' ).removeClass( 'prepare' ).addClass( 'animated fadeInUp delay-25' );
+            $( '#prayer' ).removeClass( 'prepare' ).addClass( 'animated fadeInUp' );
             isAnimated.push('true');
         }
         if ( scrollTop >= marks[5] && !isAnimated[5] ) {
-            $( '#cash' ).removeClass( 'prepare' ).addClass( 'animated fadeInUp delay-5' );
+            $( '#inkind' ).removeClass( 'prepare' ).addClass( 'animated fadeInUp delay-25' );
             isAnimated.push('true');
         }
         if ( scrollTop >= marks[6] && !isAnimated[6] ) {
+            $( '#cash' ).removeClass( 'prepare' ).addClass( 'animated fadeInUp delay-5' );
+            isAnimated.push('true');
+        }
+        if ( scrollTop >= marks[7] && !isAnimated[7] ) {
             $( '#share' ).removeClass( 'prepare' ).addClass( 'animated fadeInUp delay-75' );
             isAnimated.push('true');
         }
-        if ( isAnimated.length === 7 ) {
+        if ( isAnimated.length === 8 ) {
             clearAnimation();
         }
     };
