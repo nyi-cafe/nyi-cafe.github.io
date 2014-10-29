@@ -49,6 +49,26 @@
     .lg { display: block; }
     .md { display: none; }
 }
+.lt-ie9 {
+    background-color: #d1d1d1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    p {
+        font-size: 1.2em;
+        text-align: center;
+        color: #222;
+
+        a {
+            font-weight: bold;
+            color: #FB7064;
+            border-bottom: 1px solid #FB7064;
+        }
+    }
+}
 
 @import
     "home",
