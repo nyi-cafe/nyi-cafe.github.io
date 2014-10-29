@@ -101,7 +101,7 @@ nav.navWrap {
         font-size: 1.1em;
         font-weight: 100;
         text-transform: uppercase;
-        color: #fff;
+        color: #f9f9f9;
         padding: .5em;
         @include prefix((
             text-shadow: 0px 1px 1px rgba(#000, .6),
@@ -148,7 +148,7 @@ div.mobileMenu {
     font-weight: bold;
     letter-spacing: normal;
     color: #f9f9f9;
-    border: 1px solid rgba(#fff, .2);
+    border: 1px solid rgba(#f9f9f9, .2);
     border-radius: 2px;
     padding: .5em;
     cursor: pointer;
@@ -184,7 +184,7 @@ div.mobileMenu.hide {
         font-weight: 100;
         line-height: 1;
         text-align: center;
-        color: #fff;
+        color: #f9f9f9;
         margin: 0 0 .25em;
     }
     @at-root .subtitle {
@@ -205,7 +205,7 @@ div.mobileMenu.hide {
     }
 
     p {
-        color: #fff;
+        color: #f9f9f9;
         text-align: center;
     }
 }
